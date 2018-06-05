@@ -6,6 +6,9 @@ const BodyParser = require('koa-bodyparser')
 const Helmet = require('koa-helmet')
 const respond = require('koa-respond')
 
+// connect to db
+const mongoose = require('./db/config')
+
 const app = new Koa()
 const router = new Router()
 
