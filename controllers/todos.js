@@ -17,9 +17,9 @@ async function updateById (ctx) {
   // Find Todo based on id from url parameters
   const id = ctx.params.id
   let todo = await TodoModel.findById(id)
-  // 直接取代
-  todo = new TodoModel(ctx.request.body)
-
+  // 更新
+  todo = Object.assign(todo, ctx.request.body)
+  
   // Update todo in database
   const updatedTodo = await todo.save()
   ctx.body = updatedTodo
