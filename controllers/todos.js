@@ -8,7 +8,7 @@ async function listAll (ctx) {
 
 async function create (ctx) {
   // Create New Todo
-  const newTodo = new TodoModel(ctx.requset.body)
+  const newTodo = new TodoModel(ctx.request.body)
   const savedTodo = await newTodo.save()
   ctx.body = savedTodo
 }
@@ -18,7 +18,7 @@ async function updateById (ctx) {
   const id = ctx.params.id
   let todo = await TodoModel.findById(id)
   // 直接取代
-  todo = new TodoModel(ctx.requset.body)
+  todo = new TodoModel(ctx.request.body)
 
   // Update todo in database
   const updatedTodo = await todo.save()
