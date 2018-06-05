@@ -7,7 +7,7 @@ const Helmet = require('koa-helmet')
 const respond = require('koa-respond')
 
 // connect to db
-const mongoose = require('./db/config')
+const mongoose = require('./db/.env')
 
 const app = new Koa()
 const router = new Router()
